@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_voice_chat_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="io.agora.tutorials1v1acall.VoiceChatViewActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/cname"
+            android:layout_width="383dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Input channel name"
+            android:inputType="textVisiblePassword"
+            android:maxLines="1"
+            android:textColor="@color/colorPrimaryDark"
+            />
+
+        <Button
+            android:id="@+id/joinkBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="join_Channel" />
+
+        <Button
+            android:id="@+id/earBackBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="enable_EarBack" />
+
+        <Button
+            android:id="@+id/nsBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="enabel_Audio_NS" />
+
+        <Button
+            android:id="@+id/aecBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="enabel_Audio_AEC" />
+
+        <Button
+            android:id="@+id/agcBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="enabel_Audio_AGC" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="20"
+                android:onClick="onLocalAudioMuteClicked"
+                android:scaleType="centerInside"
+                android:src="@drawable/btn_mute" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="20"
+                android:onClick="onSwitchSpeakerphoneClicked"
+                android:scaleType="centerInside"
+                android:src="@drawable/btn_speaker" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="20"
+                android:onClick="onEncCallClicked"
+                android:scaleType="centerInside"
+                android:src="@drawable/btn_end_call" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/quick_tips_when_use_agora_sdk"
+        android:layout_width="396dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="40dp"
+        android:gravity="center_vertical|start"
+        android:text="\n This demo only supports  voice calling .\n" />
+
+
+</RelativeLayout>
