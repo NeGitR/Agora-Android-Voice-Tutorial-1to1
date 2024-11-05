@@ -18,9 +18,9 @@ import android.widget.Toast;
 
 import java.util.Locale;
 
-import io.agora.rtc.Constants;
-import io.agora.rtc.IRtcEngineEventHandler;
-import io.agora.rtc.RtcEngine;
+import io.agora.rtc2.Constants;
+import io.agora.rtc2.IRtcEngineEventHandler;
+import io.agora.rtc2.RtcEngine;
 
 public class VoiceChatViewActivity extends AppCompatActivity {
 
@@ -124,12 +124,10 @@ public class VoiceChatViewActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(aecBtnSelected){
-                    mRtcEngine.setParameters("{\"che.audio.enable.aec\":true}");
                     aecBtnSelected = false;
                     showLongToast(" enable.aec : True");
                 } else {
                     aecBtnSelected = true;
-                    mRtcEngine.setParameters("{\"che.audio.enable.aec\":false}");
                     showLongToast(" enable.aec : False");
                 }
             }
@@ -139,13 +137,11 @@ public class VoiceChatViewActivity extends AppCompatActivity {
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(nsBtnSelected){
-                    mRtcEngine.setParameters("{\"che.audio.enable.ns\":true}");
+                if(nsBtnSelected){                  
                     nsBtnSelected = false;
                     showLongToast(" enable.ns : True");
                 } else {
                     nsBtnSelected = true;
-                    mRtcEngine.setParameters("{\"che.audio.enable.ns\":false}");
                     showLongToast(" enable.ns : False");
                 }
             }
@@ -156,11 +152,9 @@ public class VoiceChatViewActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(agckBtnSelected){
-                    mRtcEngine.setParameters("{\"che.audio.enable.agc\":true}");
                     showLongToast("enable.agc : True");
                     agckBtnSelected = false;
                 } else {
-                    mRtcEngine.setParameters("{\"che.audio.enable.agc\":false}");
                     showLongToast(" enable.agc : False");
                     agckBtnSelected = true;
                 }
@@ -306,7 +300,6 @@ public class VoiceChatViewActivity extends AppCompatActivity {
         if (TextUtils.equals(accessToken, "") || TextUtils.equals(accessToken, "#YOUR ACCESS TOKEN#")) {
             accessToken = null; // default, no token
         }
-        mRtcEngine.setParameters("{\"rtc.log_filter\":65535}");
 
         // Sets the channel profile of the Agora RtcEngine.
         // CHANNEL_PROFILE_COMMUNICATION(0): (Default) The Communication profile. Use this profile in one-on-one calls or group calls, where all users can talk freely.
